@@ -14,17 +14,7 @@ namespace admin_controls
     
     public partial class login : Form
     {
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]       
-        private static extern IntPtr CreateRoundRectRgn
-        (
-            int nLeftRect,     // x-coordinate of upper-left corner
-            int nTopRect,      // y-coordinate of upper-left corner
-            int nRightRect,    // x-coordinate of lower-right corner
-            int nBottomRect,   // y-coordinate of lower-right corner
-            int nWidthEllipse, // height of ellipse
-            int nHeightEllipse // width of ellipse
-        );
-        #region Thu nhỏ và di chuyển form
+        #region Thu nhỏ form
         const int WM_NCHITTEST = 0x84;
         const int HTCLIENT = 0x1;
         const int HTCAPTION = 0x2;
@@ -48,26 +38,6 @@ namespace admin_controls
                 message.Result = (IntPtr)HTCAPTION;
         }
         #endregion
-        public login()
-        {
-            InitializeComponent();
-           // Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(1, 0, Width, Height, 0, 0));
-        }
-        private void signup_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.Hide();
-            signup f = new signup();
-            f.ShowDialog();
-            this.Show();
-        }
-
-        private void adminlog_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            adminlogin f = new adminlogin();
-            f.ShowDialog();
-            this.Close();
-        }
         #region Drag Form
         Bunifu.Framework.UI.Drag MoveForm = new Bunifu.Framework.UI.Drag();
         private void panel2_MouseDown(object sender, MouseEventArgs e)
@@ -85,9 +55,35 @@ namespace admin_controls
             MoveForm.MoveObject();
         }
         #endregion
+        public login()
+        {
+            InitializeComponent();
+        }
+        private void adminlog_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PRE.admin_login f = new PRE.admin_login();
+            f.ShowDialog();
+            this.Close();
+        }
         private void ad_exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+        private void lg_show_OnChange(object sender, EventArgs e)
+        {
+            if (lg_show.Checked == true)
+                pass.UseSystemPasswordChar = false;
+            else
+                pass.UseSystemPasswordChar = true;
+        }
+
+        private void signup_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            signup f = new signup();
+            f.ShowDialog();
+            this.Show();
         }
     }
 }

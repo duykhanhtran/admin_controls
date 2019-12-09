@@ -17,7 +17,8 @@ namespace admin_controls
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new login());
-           //Application.Run(new admin("Duy Khánh"));
+            //Application.Run(new PRE.admin_login());
+            //Application.Run(new PRE.Admin_Control(new tbl.tblAdmin ("AD001","DKva2thangngu","123")));
         }
     }
 }

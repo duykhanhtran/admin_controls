@@ -48,9 +48,15 @@ namespace admin_controls
             if (id.Text == "")
                 id.Text = "Student ID";
             if (pass.Text == "")
+            {
                 pass.Text = "Password";
+                pass.UseSystemPasswordChar = false;
+            }
             if (confirm.Text == "")
+            {
                 confirm.Text = "Confirm Password";
+                confirm.UseSystemPasswordChar = false;
+            }
             if (user.Text == "")
                 user.Text = "User Name";
         }
@@ -65,7 +71,13 @@ namespace admin_controls
                     MessageBox.Show("Your password and confirmation password do not match", "Error");
                 else
                 {
-
+                    tbl.tblStudent st = new tbl.tblStudent(id.Text, user.Text, pass.Text,
+                                        fullname.Text, birthday.Text);
+                    BUS.StudentBLL student = new BUS.StudentBLL();
+                    if(student.InsertStudent(st)==false)
+                        MessageBox.Show("Cant sign-up", "Error");
+                    else
+                        MessageBox.Show("Successfully");
                 }
             }
             this.Close();
@@ -136,6 +148,7 @@ namespace admin_controls
             re_fill();
             if (pass.Text == "Password")
             {
+                pass.UseSystemPasswordChar = true;
                 pass.Text = "";
                 return;
             }
@@ -146,6 +159,7 @@ namespace admin_controls
             re_fill();
             if (confirm.Text == "Confirm Password")
             {
+                confirm.UseSystemPasswordChar = true;
                 confirm.Text = "";
                 return;
             }

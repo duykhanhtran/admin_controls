@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{FCB5AC3B-FB06-4BD7-9D9D-9E91B6E1E035}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>DuyKhanh</RootNamespace>
-    <AssemblyName>DuyKhanh</AssemblyName>
+    <RootNamespace>admin_controls</RootNamespace>
+    <AssemblyName>admin_controls</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -60,25 +60,70 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="admin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="admin.Designer.cs">
-      <DependentUpon>admin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="adminlogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="adminlogin.Designer.cs">
-      <DependentUpon>adminlogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BUS-TIER\Student_BLL.cs" />
-    <Compile Include="DATA-TIER\Student_DAL.cs" />
+    <Compile Include="BUS\AdminBLL.cs" />
+    <Compile Include="BUS\AllocationBLL.cs" />
+    <Compile Include="DATA\AdminDAL.cs" />
+    <Compile Include="DATA\DataConnection.cs" />
+    <Compile Include="DATA\AllocationDAL.cs" />
+    <Compile Include="BUS\TeacherBLL.cs" />
+    <Compile Include="BUS\CourseBLL.cs" />
+    <Compile Include="BUS\StudentBLL.cs" />
+    <Compile Include="DATA\CourseDAL.cs" />
+    <Compile Include="DATA\StudentDAL.cs" />
+    <Compile Include="DATA\TeacherDAL.cs" />
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRE\Admin_Control.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRE\Admin_Control.Designer.cs">
+      <DependentUpon>Admin_Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRE\admin_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRE\admin_login.Designer.cs">
+      <DependentUpon>admin_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRE\ad_uc_al.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRE\ad_uc_al.Designer.cs">
+      <DependentUpon>ad_uc_al.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRE\ad_uc_at.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRE\ad_uc_at.Designer.cs">
+      <DependentUpon>ad_uc_at.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRE\ad_uc_cs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRE\ad_uc_cs.Designer.cs">
+      <DependentUpon>ad_uc_cs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRE\ad_uc_db.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRE\ad_uc_db.Designer.cs">
+      <DependentUpon>ad_uc_db.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRE\ad_uc_ep.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRE\ad_uc_ep.Designer.cs">
+      <DependentUpon>ad_uc_ep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRE\ad_uc_us.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PRE\ad_uc_us.Designer.cs">
+      <DependentUpon>ad_uc_us.cs</DependentUpon>
     </Compile>
     <Compile Include="signup.cs">
       <SubType>Form</SubType>
@@ -88,14 +133,37 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="admin.resx">
-      <DependentUpon>admin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="adminlogin.resx">
-      <DependentUpon>adminlogin.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="tbl\tblAdmin.cs" />
+    <Compile Include="tbl\tblCourse.cs" />
+    <Compile Include="tbl\tblStudent.cs" />
+    <Compile Include="tbl\tblTeacher.cs" />
+    <Compile Include="tbl\tblAllocation.cs" />
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRE\Admin_Control.resx">
+      <DependentUpon>Admin_Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRE\admin_login.resx">
+      <DependentUpon>admin_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRE\ad_uc_al.resx">
+      <DependentUpon>ad_uc_al.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRE\ad_uc_at.resx">
+      <DependentUpon>ad_uc_at.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRE\ad_uc_cs.resx">
+      <DependentUpon>ad_uc_cs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRE\ad_uc_db.resx">
+      <DependentUpon>ad_uc_db.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRE\ad_uc_ep.resx">
+      <DependentUpon>ad_uc_ep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRE\ad_uc_us.resx">
+      <DependentUpon>ad_uc_us.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="signup.resx">
       <DependentUpon>signup.cs</DependentUpon>
@@ -108,6 +176,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -123,5 +192,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
